@@ -1,0 +1,3 @@
+This repository contains code I have written for the 300-level Computer Science class, Operating Systems. The course description follows. 
+
+The thing that we call a computer is actually a complex collection of interacting devices. To ensure that these devices work together effectively without excessive human intervention, people have developed operating systems software that coordinates the behavior of the devices and gives programmers ways to control those devices. This course will address the fundamental problems that operating systems need to solve, including those concerned with process management, file organization, memory management, and input/output control. We will also study the structure of the Linux operating system.

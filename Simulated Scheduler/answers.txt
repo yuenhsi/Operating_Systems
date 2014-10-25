@@ -1,5 +1,5 @@
 Implementing Processor Scheduler using pthreads
-Tenzin Rigden and Yuen Hsi Chang 
+Tenzin Rigden
 
 Problem 1: 
 
