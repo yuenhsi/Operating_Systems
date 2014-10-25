@@ -1,0 +1,28 @@
+1
+a. chmod 722 test
+b. wc -l test
+c. tail -n 3 test
+
+2
+a. I'm running 7 things, including Finder and PaperCut NG. Root is running 42 processes. 
+
+b. The amount of time and order of processes that use the most CPU percentage fluctuates a lot. For me, LabStatsClient fluctuates between 8 to 200+ % CPu Usage, textedit uses 2%, and everything else falls below 1%. The top 5 processes are LabStatsClient, TextEdit, kernel_task, Activity Monitor, and WindowsServer. I think the processes with high CPU usage are due to them being opened, so the CPU has to constantly communicate with the software to ensure that the information displayed on-screen is consistent. I believe LabStatsClient is the aggregate of all processes. 
+
+c. The list doesn't really change. Processes that use the most memory include LabStatsClient, kernel_task, Firefox, Word, and WindowServer. I think the real memory that is used by the OS is constant, because currently data is not being written. 
+
+d. roughly 0-30% CPU time is used by User Processes, 2-10% by System Processes, and the CPU is idle 60-98% of the time. 
+
+e. This computer has 12.00 GB of memory. 3.16 of that memory is currently free. 
+	Wired Memory is memory that is used by the OS and cannot be borrowed by other applications
+	Active memory is the information that is stored in RAM and has been recently used. 
+	Inactive memory is information that is in RAM and was recently used, but is currently free. Applications that get reopened open faster because it's memory moves towards being inactive, which loads faster than memory from the disc drive. 
+
+f. My program uses close to (and sometimes more than) 60% of the CPU. However, my computer seems to still be responsive when I try to do other tasks. 
+
+g. My computer seems to slow down for a couple seconds, and it picks up speed again. Running two instances of the same program seem reduce the CPU task for each respective program; it now uses 50% CPU each. 
+
+h. Running 5 instances of the same program still uses the same amount of CPU. However, I have noticed that my computer slows down a little bit while I try to do something else on it. Terminal also has some delay in displaying my outputs each loop generates. All 5 instances now run at only 30% CPU each. 
+
+i. The memory used goes up to 1.8GB and stops. My computer seems to be fairly responsive even when the memory shoots up. 
+
+j. Each of the program uses around 1.6 GB each. My computer seems to slow down, this time more prominantly. 

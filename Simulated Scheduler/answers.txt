@@ -1,0 +1,28 @@
+Implementing Processor Scheduler using pthreads
+Tenzin Rigden and Yuen Hsi Chang 
+
+Problem 1: 
+
+FCFS with 1, 2, and 4 CPUs: Is there a linear relationship between the number of CPUs and total exception time? Why and why not? 
+
+The execution time for our FCFS simulation for 1, 2, and 4 CPUs were 67.8s, 36.1s, 33.4s respectively.
+There is a linear relationship between CPUs and execution time when switching from 1 to 2 CPUs because at 1 CPU, the CPU is the bottleneck and concurrency allows it to effectively half its runtime. However, when you go from 2 to 4, the bottleneck then switches to I/O requests which happens when the CPUs are idle. If there were more CPU-bound processes we would probably see the linear relationship extend to 4 CPUs, but in our example this is limited by the inevitable execution of I/O-bound processes. .
+
+Problem 2: RR with 800ms, 600ms, 400ms, and 200ms timeslices, and 1 CPU: Statistics show that the total waiting time decreases with shorter timeslices, but why isn't the shortest timeslice not usually the best choice in a real OS? 
+
+time slice of 800ms: 136 context switches, 67.6s execution time, 325.4s waiting in ready queue
+time slice of 600ms: 160 context switches, 67.7s execution time, 310.5s waiting in ready queue
+time slice of 400ms: 203 context switches, 67.6s execution time, 298.8s waiting in ready queue
+time slice of 200ms: 362 context swithces, 67.5s execution time, 285.2s waiting in ready queue.
+
+Clearly, the time spent waiting in the ready queue decreases as the time slices get shorter. However, this is usually not the best choice for performance in a real OS, because context switches have a nonzero cost in the real world. This means having a large amount context switches could very possibly introduce bottlenecks to the total execution time, greater than the amount of time it saves on processes waiting in the ready queue. 
+
+Problem 3: SJF is optimal, but impossible, as a scheduler does not have advance knowledge of the length of each CPU burst. Compare total waiting times of each scheduling algorithms using one CPU, which algorithm is the closest approximation to SJF and why? 
+
+FCFS: 389.9s waiting in ready queue
+RR: ~300s waiting in ready queue (280-330s depending on time slice)
+SP: 138.6s wiating in ready queue
+
+The Static Priority Scheduling algorithm spends the least time waiting in the ready queue, implying that the SP algorithm is the closest approximation to the Shortest Job First (SJF) scheduling algorithm. This is because a good Operating System assigns priority numbers to processes depending on whether they are CPU-bound or I/O-bound. 
+
+By assigning and executing I/O-bound processes first, the OS effectively minimizes the time each process spends waiting in the ready queue. This is because I/O bound processes tend to spend relatively less time running on the CPU before yielding, such that by prioritizing these processes the CPU is usually occupied. Inevitably, the I/O queue gets filled up more frequently, but this is out of the scope of this question. 
